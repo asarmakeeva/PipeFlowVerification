@@ -1,0 +1,121 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        "system";
+    object          sample;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type sets;
+libs            ("libsampling.so");
+
+interpolationScheme cell;//cellPointFace--;
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cell;
+
+
+setFormat csv;
+//      null        : suppress output
+//      foamFile    : separate points, faces and values file
+//      dx          : DX scalar or vector format
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+
+
+sets
+(
+    at0.05
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.05);
+        end             (0 0.00227 0.05);
+    }
+    at0.043
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.043);
+        end             (0 0.00227 0.043);
+    }
+    at0.07
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.07);
+        end             (0 0.00227 0.07);
+    }
+    at0.086
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.086);
+        end             (0 0.00227 0.086);
+    }
+    at0.09
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.09);
+        end             (0 0.00227 0.09);
+    }
+    at0.098
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.098);
+        end             (0 0.00227 0.098);
+    }       
+    at0.12
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.12);
+        end             (0 0.00227 0.12);
+    }   
+    at0.15
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.15);
+        end             (0 0.00227 0.15);
+    }        
+    at0.17
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.17);
+        end             (0 0.00227 0.17);
+    }       
+    at0.19
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.19);
+        end             (0 0.00227 0.19);
+    } 
+);
+
+fields
+(
+    U
+);
+
+
+// ************************************************************************* //

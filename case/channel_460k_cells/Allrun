@@ -1,0 +1,10 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+cd /system
+m4 blockMeshDict.m4 > blockMeshDict
+cd ..
+
+icoFoam > run.log 2>&1
+postProcess -func sample
+#------------------------------------------------------------------------------
